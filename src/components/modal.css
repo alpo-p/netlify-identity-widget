@@ -100,7 +100,7 @@
 
 @media (min-width: 480px) {
   .modalContainer::before {
-    background-color: var(--baseColor);
+    background-color: rgba(0, 0, 0, 0.85);
     animation: fadeIn 0.1s ease-in;
     animation-fill-mode: forwards;
   }

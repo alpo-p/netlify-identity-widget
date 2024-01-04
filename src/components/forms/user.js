@@ -18,8 +18,8 @@ export default class UserForm extends Component {
   };
 
   render() {
-    const { page, message, saving, namePlaceholder, t } = this.props;
-    const { name, email, password } = this.state;
+    const { page, message, saving, t } = this.props;
+    const { email, password } = this.state;
 
     return (
       <form
@@ -27,28 +27,7 @@ export default class UserForm extends Component {
         className={`form ${saving ? "disabled" : ""}`}
       >
         {message && <Message type={message} t={t} />}
-        {page.name && (
-          <div className="formGroup">
-            <label>
-              <span className="visuallyHidden">
-                {t("form_name_placeholder")}
-              </span>
-              <input
-                className="formControl"
-                type="name"
-                name="name"
-                value={name}
-                placeholder={
-                  namePlaceholder ? namePlaceholder : t("form_name_label")
-                }
-                autocapitalize="off"
-                required
-                oninput={this.handleInput}
-              />
-              <div className="inputFieldIcon inputFieldName" />
-            </label>
-          </div>
-        )}
+
         {page.email && (
           <div className="formGroup">
             <label>
